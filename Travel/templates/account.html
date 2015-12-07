@@ -1,0 +1,21 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+{{user_name}}
+
+{% include 'account/display_account.html' %}
+
+
+    <!-- error handling -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message_error in messages %}
+    <div class="alert alert-warning">
+    {{ message_error }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+{% endblock %}
